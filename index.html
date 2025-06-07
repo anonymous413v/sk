@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SR Auto Consultants</title>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: #0e0e0e;
+            color: #f3e9dc;
+        }
+
+        header {
+            background-color: #0e0e0e;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid #1f1f1f;
+            border-radius: 50%;
+            
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: #f5deb3;
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            color: #bcbcbc;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f5deb3;
+        }
+
+        .slider {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            filter: brightness(0.85);
+        }
+
+        .dots {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .dot {
+            display: inline-block;
+            height: 14px;
+            width: 14px;
+            margin: 0 6px;
+            background-color: #666;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dot.active {
+            background-color: #ffd700;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            color: #f5deb3;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.2em;
+            color: #bcbcbc;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 60px 20px;
+            background-color: #121212;
+        }
+
+        .service {
+            width: 300px;
+            margin: 20px;
+            background-color: #1a1a1a;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+            color: #ddd;
+        }
+
+        .service h3 {
+            color: #f5deb3;
+            margin-bottom: 10px;
+        }
+
+        .gallery {
+            padding: 60px 20px;
+            background-color: #0e0e0e;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #f5deb3;
+            margin-bottom: 40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .contact p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .contact strong {
+            font-size: 1.4em;
+            color: #f5deb3;
+        }
+
+        footer {
+            background-color: #0e0e0e;
+            padding: 20px;
+            text-align: center;
+            color: #888;
+            border-top: 1px solid #1f1f1f;
+        }
+
+        footer a {
+            color: #bcbcbc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #f5deb3;
+        }
+
+table {
+    width: 80%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    font-family: 'Urbanist', sans-serif;
+    background-color: #1a1a1a;
+    color: #f3e9dc;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #2b2b2b;
+}
+
+th, td {
+    padding: 15px 20px;
+    text-align: left;
+}
+
+th {
+    font-weight: 700;
+    color: #f5deb3;
+    border-bottom: 2px solid #444;
+}
+
+tbody tr {
+    border-bottom: 1px solid #333;
+}
+
+tbody tr:hover {
+    background-color: #2e2e2e;
+    transition: background-color 0.3s ease;
+}
+
+ </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>SR Associates</h1>
+        <nav>
+            <a href="/home.html">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/services.html">Services</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+
+
+    </header>
+    <main>
+        <div class="slider" id="slider">
+            <div class="slides">
+                <div class="slide"><img
+                        src="https://images.unsplash.com/photo-1687402346435-9ad65d1f87f9?q=80&w=1974&auto=format&fit=crop"
+                        alt="Luxury Car"></div>
+                <div class="slide"><img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d"
+                        alt="Used Car Dealership"></div>
+                <div class="slide"><img
+                        src="https://images.unsplash.com/photo-1597007030739-6d2e7172ee5b?q=80&w=2070&auto=format&fit=crop"
+                        alt="Customer Consultation"></div>
+            </div>
+        </div>
+        <div class="dots" id="dots"></div>
+
+        <section class="hero" id="about">
+            <h2>Premium Car Consultation & Financing</h2>
+            <p>Expert advice on new and pre-owned vehicles, financing options, and car loan consultation tailored for
+                luxury car buyers.</p>
+        </section>
+       <a href="https://wa.me/9829097019" target="_blank" class="whatsapp-button" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+">
+  <img src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp.png" alt="WhatsApp"
+    style="vertical-align: middle; margin-right: 8px;" />
+  Chat with us
+</a>
+
+        </a>
+        <section class="services" id="services">
+            <div class="service">
+                <h3>New Car Consultation</h3>
+                <p>Get expert guidance on selecting your next new car with the best financing solutions.</p>
+            </div>
+            <div class="service">
+                <h3>Used Car Evaluation</h3>
+                <p>Trusted advice on purchasing reliable pre-owned cars with complete background checks.</p>
+            </div>
+            <div class="service">
+                <h3>Auto Loan Assistance</h3>
+                <p>We assist you in securing the most favorable auto loan offers from premium banks.</p>
+            </div>
+        </section>
+<table>
+  <thead>
+    <tr>
+      <th>BANK</th>
+      <th>INTEREST RATE%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bank of Baroda</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>SBI</td>
+      <td>12%</td>
+    </tr>
+    <tr>
+      <td>AU Small Finance Bank</td>
+      <td>8%</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+        <section class="gallery">
+            <h2>Selected Work</h2>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1687402346435-9ad65d1f87f9?q=80" alt="Car 1">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d" alt="Car 2">
+                <img src="https://images.unsplash.com/photo-1597007030739-6d2e7172ee5b?q=80" alt="Car 3">
+                <img src="https://images.unsplash.com/photo-1670054953044-2605dbd0d747?q=80" alt="Car 4">
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <p>Contact us at</p>
+            <p><strong>+91 98290 97019</strong></p>
+            <p>Email:</p>
+            <p><strong>Alok.gaur68@gmail.com</strong></p>
+        </section>
+        
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SR Auto Consultants | <a href="#about">About Us</a> | <a href="#contact">Contact</a></p>
+    </footer>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const dotsContainer = document.getElementById('dots');
+        const totalSlides = slides.children.length;
+        let currentIndex = 0;
+
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+
+        function goToSlide(index) {
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+            document.querySelectorAll('.dot')[index].classList.add('active');
+            currentIndex = index;
+        }
+
+        // Optional: Auto-slide
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            goToSlide(currentIndex);
+        }, 5000);
+    </script>
+</body>
+
+</html>
